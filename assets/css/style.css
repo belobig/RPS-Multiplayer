@@ -1,0 +1,10 @@
+body {
+	background: url(../images/rockpaperscissors.jpg) repeat center fixed;
+}
+
+.whtRndBrdr {
+	border: 2px solid white;
+	border-radius: 10px;
+	margin: 10px 0;
+	background: rgba(216, 166, 101, 0.795);
+}
