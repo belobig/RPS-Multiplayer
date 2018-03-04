@@ -28,6 +28,8 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
 ui.start('#firebaseui-auth-container', uiConfig);
 
 
+var signOutBtn = '<button class="btn btn-primary" id="signOutBtn"><span class="glyphicon glyphicon-log-out"></span></button>';
+
 initApp = function() {
 	firebase.auth().onAuthStateChanged(function(user) {
 		if (user) {
@@ -42,7 +44,7 @@ initApp = function() {
 			user.getIdToken().then(function(accessToken) {
 				document.getElementById('firebaseui-auth-container').innerHTML = '';
 				document.getElementById('sign-in-status').textContent = 'Signed in';
-				document.getElementById('sign-in').textContent = 'Sign out';
+				document.getElementById('sign-in').innerHTML = signOutBtn;
 				document.getElementById('account-details').innerHTML = '<img class="userImage img-rounded" src="' + photoURL + '" alt="User Image">' + displayName;/*JSON.stringify({
 					displayName: displayName,
 					email: email,
@@ -67,4 +69,8 @@ initApp = function() {
 
 window.addEventListener('load', function() {
 	initApp()
+});
+
+$("#signOutBtn").on("click", function() {
+	console.log("sign out clicked");
 });

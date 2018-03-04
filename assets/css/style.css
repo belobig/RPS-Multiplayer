@@ -12,4 +12,5 @@ body {
 .userImage {
 	max-height: 40px;
 	max-width: 40px;
+	margin: 2px;
 }
