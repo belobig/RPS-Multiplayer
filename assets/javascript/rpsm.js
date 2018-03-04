@@ -43,7 +43,7 @@ initApp = function() {
 				document.getElementById('firebaseui-auth-container').innerHTML = '';
 				document.getElementById('sign-in-status').textContent = 'Signed in';
 				document.getElementById('sign-in').textContent = 'Sign out';
-				document.getElementById('account-details').textContent = JSON.stringify({
+				document.getElementById('account-details').textContent = displayName;/*JSON.stringify({
 					displayName: displayName,
 					email: email,
 					emailVerified: emailVerified,
@@ -52,7 +52,7 @@ initApp = function() {
 					uid: uid,
 					accessToken: accessToken,
 					providerData: providerData
-				}, null, '  ');
+				}, null, '  ');*/
 			});
 		} else {
 			// User is signed out.
