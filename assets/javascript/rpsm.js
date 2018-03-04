@@ -43,7 +43,7 @@ initApp = function() {
 				document.getElementById('firebaseui-auth-container').innerHTML = '';
 				document.getElementById('sign-in-status').textContent = 'Signed in';
 				document.getElementById('sign-in').textContent = 'Sign out';
-				document.getElementById('account-details').innerHTML = '<img src="' + photoURL + '" alt="User Image">' + displayName;/*JSON.stringify({
+				document.getElementById('account-details').innerHTML = '<img class="userImage img-rounded" src="' + photoURL + '" alt="User Image">' + displayName;/*JSON.stringify({
 					displayName: displayName,
 					email: email,
 					emailVerified: emailVerified,
