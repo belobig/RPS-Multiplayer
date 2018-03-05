@@ -56,7 +56,11 @@ initApp = function() {
 					providerData: providerData
 				}, null, '  ');*/
 				$("#signOutBtn").on("click", function() {
-					console.log("sign out clicked");
+					firebase.auth().signOut().then(function() {
+						console.log('Signed Out');
+					}, function(error) {
+						console.error('Sign Out Error', error);
+					});
 				});
 			});
 		} else {
