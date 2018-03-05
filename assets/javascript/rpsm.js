@@ -45,15 +45,16 @@ initApp = function () {
 				document.getElementById('firebaseui-auth-container').innerHTML = '';
 				document.getElementById('sign-in').innerHTML = signOutBtn;
 				document.getElementById('account-details').innerHTML = '<img class="userImage img-rounded" src="' + photoURL + '" alt="User Image">' + displayName;
-			});
-			console.log("User is Signed IN!");
-			$("#signOutBtn").on("click", function () {
-				firebase.auth().signOut().then(function () {
-					console.log('Signed Out');
-				}, function (error) {
-					console.error('Sign Out Error', error);
+				$("#signOutBtn").on("click", function () {
+					firebase.auth().signOut().then(function () {
+						console.log('Signed Out');
+					}, function (error) {
+						console.error('Sign Out Error', error);
+					});
 				});
 			});
+			console.log("User is Signed IN!");
+			
 		} else {
 			// User is signed out.
 			$('#firebaseui-auth-container', uiConfig);
