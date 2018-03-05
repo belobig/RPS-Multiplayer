@@ -45,6 +45,7 @@ initApp = function () {
 				document.getElementById('firebaseui-auth-container').innerHTML = '';
 				document.getElementById('account-details').innerHTML = '<img class="userImage img-rounded" src="' + photoURL + '" alt="User Image">' + displayName;
 			});
+			console.log("User is Signed IN!");
 			$("#signOutBtn").on("click", function () {
 				firebase.auth().signOut().then(function () {
 					console.log('Signed Out');
@@ -54,8 +55,9 @@ initApp = function () {
 			});
 		} else {
 			// User is signed out.
-			ui.start('#firebaseui-auth-container', uiConfig);
+			$('#firebaseui-auth-container', uiConfig);
 			document.getElementById('account-details').innerHTML = '';
+			console.log("User is signed out");
 		}
 	}, function (error) {
 		console.log(error);
