@@ -48,7 +48,7 @@ initApp = function () {
 				$("#signOutBtn").on("click", function () {
 					firebase.auth().signOut().then(function () {
 						console.log('Signed Out');
-						ui.start('#firebaseui-auth-container', uiConfig);
+						$('#firebaseui-auth-container', uiConfig);
 					}, function (error) {
 						console.error('Sign Out Error', error);
 					});
