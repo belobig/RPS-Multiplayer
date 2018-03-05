@@ -43,6 +43,7 @@ initApp = function () {
 			var providerData = user.providerData;
 			user.getIdToken().then(function (accessToken) {
 				document.getElementById('firebaseui-auth-container').innerHTML = '';
+				document.getElementById('sign-in').innerHTML = signOutBtn;
 				document.getElementById('account-details').innerHTML = '<img class="userImage img-rounded" src="' + photoURL + '" alt="User Image">' + displayName;
 			});
 			console.log("User is Signed IN!");
@@ -57,6 +58,7 @@ initApp = function () {
 			// User is signed out.
 			$('#firebaseui-auth-container', uiConfig);
 			document.getElementById('account-details').innerHTML = '';
+			document.getElementById('sign-in').innerHTML = '';
 			console.log("User is signed out");
 		}
 	}, function (error) {
