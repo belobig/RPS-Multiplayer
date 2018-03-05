@@ -30,8 +30,8 @@ ui.start('#firebaseui-auth-container', uiConfig);
 
 var signOutBtn = '<button class="btn btn-primary" id="signOutBtn"><span class="glyphicon glyphicon-log-out"></span></button>';
 
-initApp = function() {
-	firebase.auth().onAuthStateChanged(function(user) {
+initApp = function () {
+	firebase.auth().onAuthStateChanged(function (user) {
 		if (user) {
 			// User is signed in.
 			var displayName = user.displayName;
@@ -41,40 +41,28 @@ initApp = function() {
 			var uid = user.uid;
 			var phoneNumber = user.phoneNumber;
 			var providerData = user.providerData;
-			user.getIdToken().then(function(accessToken) {
+			user.getIdToken().then(function (accessToken) {
 				document.getElementById('firebaseui-auth-container').innerHTML = '';
-				document.getElementById('sign-in-status').textContent = 'Signed in';
-				document.getElementById('sign-in').innerHTML = signOutBtn;
-				document.getElementById('account-details').innerHTML = '<img class="userImage img-rounded" src="' + photoURL + '" alt="User Image">' + displayName;/*JSON.stringify({
-					displayName: displayName,
-					email: email,
-					emailVerified: emailVerified,
-					phoneNumber: phoneNumber,
-					photoURL: photoURL,
-					uid: uid,
-					accessToken: accessToken,
-					providerData: providerData
-				}, null, '  ');*/
-				$("#signOutBtn").on("click", function() {
-					firebase.auth().signOut().then(function() {
-						console.log('Signed Out');
-					}, function(error) {
-						console.error('Sign Out Error', error);
-					});
+				document.getElementById('account-details').innerHTML = '<img class="userImage img-rounded" src="' + photoURL + '" alt="User Image">' + displayName;
+			});
+			$("#signOutBtn").on("click", function () {
+				firebase.auth().signOut().then(function () {
+					console.log('Signed Out');
+				}, function (error) {
+					console.error('Sign Out Error', error);
 				});
 			});
 		} else {
 			// User is signed out.
-			document.getElementById('sign-in-status').textContent = 'Signed out';
-			document.getElementById('sign-in').textContent = 'Sign in';
-			document.getElementById('account-details').textContent = 'null';
+			ui.start('#firebaseui-auth-container', uiConfig);
+			document.getElementById('account-details').innerHTML = '';
 		}
-	}, function(error) {
+	}, function (error) {
 		console.log(error);
 	});
 };
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
 	initApp()
 });
 
