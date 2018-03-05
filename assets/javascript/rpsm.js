@@ -55,6 +55,9 @@ initApp = function() {
 					accessToken: accessToken,
 					providerData: providerData
 				}, null, '  ');*/
+				$("#signOutBtn").on("click", function() {
+					console.log("sign out clicked");
+				});
 			});
 		} else {
 			// User is signed out.
@@ -71,6 +74,3 @@ window.addEventListener('load', function() {
 	initApp()
 });
 
-$("#signOutBtn").on("click", function() {
-	console.log("sign out clicked");
-});
