@@ -48,7 +48,6 @@ initApp = function () {
 				$("#signOutBtn").on("click", function () {
 					firebase.auth().signOut().then(function () {
 						console.log('Signed Out');
-						$('#firebaseui-auth-container', uiConfig);
 					}, function (error) {
 						console.error('Sign Out Error', error);
 					});
@@ -60,6 +59,7 @@ initApp = function () {
 			// User is signed out.
 			document.getElementById('account-details').innerHTML = '';
 			document.getElementById('sign-in').innerHTML = '';
+			document.getElementById('firebase-auth-container').innerHTML = uiConfig.signInOptions[0];
 			console.log("User is signed out");
 		}
 	}, function (error) {
