@@ -59,7 +59,7 @@ initApp = function () {
 			// User is signed out.
 			document.getElementById('account-details').innerHTML = '';
 			document.getElementById('sign-in').innerHTML = '';
-			document.getElementById('firebase-auth-container').innerHTML = uiConfig.signInOptions[0];
+			document.getElementById('firebase-auth-container').innerHTML = uiConfig;
 			console.log("User is signed out");
 		}
 	}, function (error) {
