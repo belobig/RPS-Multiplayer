@@ -42,7 +42,7 @@ initApp = function () {
 			var phoneNumber = user.phoneNumber;
 			var providerData = user.providerData;
 			user.getIdToken().then(function (accessToken) {
-				document.getElementById('firebaseui-auth-container').innerHTML = '';
+				$("#firebase-auth-container").hide();
 				document.getElementById('sign-in').innerHTML = signOutBtn;
 				document.getElementById('account-details').innerHTML = '<img class="userImage img-rounded" src="' + photoURL + '" alt="User Image">' + displayName;
 				$("#signOutBtn").on("click", function () {
@@ -59,8 +59,7 @@ initApp = function () {
 			// User is signed out.
 			document.getElementById('account-details').innerHTML = '';
 			document.getElementById('sign-in').innerHTML = '';
-			document.getElementById('firebase-auth-container').innerHTML = ui.start(uiConfig); // This isn't working
-			
+			$("#firebase-auth-container").show();
 			console.log("User is signed out");
 		}
 	}, function (error) {
