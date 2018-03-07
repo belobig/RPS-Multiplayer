@@ -1,3 +1,7 @@
+$(document).ready(function(){
+	$('[data-toggle="tooltip"]').tooltip(); 
+});
+
 // Initialize Firebase
 var config = {
 	apiKey: "AIzaSyCpv3cS3sO0e5cgLD8O2GkHyDLo5VoyUVw",
@@ -28,13 +32,11 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
 ui.start('#firebaseui-auth-container', uiConfig);
 
 
-var signOutBtn = '<button class="btn btn-primary" id="signOutBtn" data-toggle="tooltip" data-placement="left" title "Sign Out"><span class="glyphicon glyphicon-log-out"></span></button>';
+var signOutBtn = '<button class="btn btn-primary" id="signOutBtn" data-toggle="tooltip" data-placement="left" title="Sign Out"><span class="glyphicon glyphicon-log-out"></span></button>';
 
 var playArea = '<div class="col-lg-12 text-center whtRndBrdr" id="playArea"><h1>Rock Paper Scissors... Multiplayer!!!</h1></div>';
 
-$(document).ready(function(){
-	$('[data-toggle="tooltip"]').tooltip(); 
-});
+
 
 initApp = function () {
 	firebase.auth().onAuthStateChanged(function (user) {
@@ -70,7 +72,7 @@ initApp = function () {
 			$("#firebaseui-auth-container").show();
 			$("body").removeClass("hotBody");
 			$("#mainArea").html('');
-			console.log("User is signed out 002");
+			console.log("User is signed out 003");
 		}
 	}, function (error) {
 		console.log(error);
