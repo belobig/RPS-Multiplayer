@@ -30,6 +30,8 @@ ui.start('#firebaseui-auth-container', uiConfig);
 
 var signOutBtn = '<button class="btn btn-primary" id="signOutBtn"><span class="glyphicon glyphicon-log-out"></span></button>';
 
+var playArea = '<div class="col-lg-12 text-center whtRndBrdr" id="playArea"><h1>Rock Paper Scissors... Multiplayer!!!</h1></div>';
+
 initApp = function () {
 	firebase.auth().onAuthStateChanged(function (user) {
 		if (user) {
@@ -53,7 +55,7 @@ initApp = function () {
 					});
 				});
 			});
-			$("#playArea").html('<h1>Rock Paper Scissors... Multiplayer!!!</h1>');
+			$("#playArea").html(playArea);
 			console.log("User is Signed IN!");
 			
 		} else {
