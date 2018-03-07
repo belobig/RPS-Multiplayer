@@ -64,6 +64,7 @@ initApp = function () {
 			document.getElementById('account-details').innerHTML = '';
 			document.getElementById('sign-in').innerHTML = '';
 			$("#firebaseui-auth-container").show();
+			$("body").removeClass("hotBody");
 			console.log("User is signed out");
 		}
 	}, function (error) {
