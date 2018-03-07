@@ -53,7 +53,7 @@ initApp = function () {
 					});
 				});
 			});
-			
+			$("#playArea").html('<h1>Rock Paper Scissors... Multiplayer!!!</h1>');
 			console.log("User is Signed IN!");
 			
 		} else {
