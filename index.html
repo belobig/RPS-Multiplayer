@@ -33,13 +33,13 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-							<div id="firebaseui-auth-container"></div>
+						<div id="firebaseui-auth-container"></div>
 					</li>
 					<li>
-							<div id="sign-in"></div>
+						<div id="sign-in"></div>
 					</li>
 					<li>
-							<div id="account-details"></div>
+						<div id="account-details"></div>
 					</li>
 				</ul>
 			</div>
@@ -49,12 +49,17 @@
 	</nav>
 	<div class="container">
 		<div class="row" id="mainArea">
-			
+
 		</div>
 	</div>
 
 	<script src="assets/javascript/jquery-3.3.1.js"></script>
 	<script src="assets/javascript/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('[data-toggle="tooltip"]').tooltip();
+		});
+	</script>
 	<script src="assets/javascript/rpsm.js"></script>
 
 </body>

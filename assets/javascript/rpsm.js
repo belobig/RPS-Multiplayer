@@ -1,6 +1,3 @@
-$(document).ready(function(){
-	$('[data-toggle="tooltip"]').tooltip(); 
-});
 
 // Initialize Firebase
 var config = {
@@ -72,7 +69,7 @@ initApp = function () {
 			$("#firebaseui-auth-container").show();
 			$("body").removeClass("hotBody");
 			$("#mainArea").html('');
-			console.log("User is signed out 003");
+			console.log("User is signed out 004");
 		}
 	}, function (error) {
 		console.log(error);
