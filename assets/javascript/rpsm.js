@@ -55,6 +55,7 @@ initApp = function () {
 					});
 				});
 			});
+			$("body").addClass("hotBody");
 			$("#playArea").html(playArea);
 			console.log("User is Signed IN!");
 			
