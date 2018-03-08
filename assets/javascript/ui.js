@@ -8,7 +8,7 @@ var UI = (function () {
 		// Make Layout fill div vertically
 		fillVertically: function () {
 			//fill vertically
-			var pageHeader = document.querySelector("header");
+			var pageHeader = document.querySelector("navbar-header"); //changed from just 'header'
 			var chat = document.querySelector("#chat");
 			chat.style.height = (window.innerHeight - pageHeader.clientHeight - 32) + "px";
 
