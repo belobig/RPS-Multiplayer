@@ -7,7 +7,7 @@
  * */
 
 // Configure Firebase
-firebase.initializeApp(config);
+// firebase.initializeApp(config);
 
 // Application starts
 window.onload = function() {
