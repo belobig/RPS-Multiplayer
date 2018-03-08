@@ -20,12 +20,12 @@ var UI = (function () {
 			messages.style.height = (chat.clientHeight - (chatHeader.clientHeight + input.clientHeight)) + "px";
 
 			//manage image height -- Probably won't need this
-			// var images = document.querySelectorAll("#game .face");
-			// var height = (chat.clientHeight / 2) - 80;
-			// for (var counter = 0; counter < images.length; counter++) {
-			// 	var img = images.item(counter);
-			// 	img.style.maxHeight = height + "px";
-			// }
+			var images = document.querySelectorAll("#game .face");
+			var height = (chat.clientHeight / 2) - 80;
+			for (var counter = 0; counter < images.length; counter++) {
+				var img = images.item(counter);
+				img.style.maxHeight = height + "px";
+			}
 		},
 
 		/*
