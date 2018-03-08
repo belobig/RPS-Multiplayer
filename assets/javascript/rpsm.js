@@ -70,7 +70,7 @@ initApp = function () {
 			$("#firebaseui-auth-container").show();
 			$("body").removeClass("hotBody");
 			$("#mainArea").html('');
-			console.log("User is signed out 005");
+			console.log("User is signed out 006");
 		}
 	}, function (error) {
 		console.log(error);
