@@ -21,9 +21,10 @@
 			$('[data-toggle="tooltip"]').tooltip();
 		});
 	</script>
-	<script src="assets/javascript/rpsm.js"></script>
+	<script defer src="assets/javascript/rpsm.js"></script>
 	<script defer src="assets/javascript/chat.js"></script>
 	<script defer src="assets/javascript/ui.js"></script>
+	<script defer src="assets/javascript/script.js"></script>
 	<title>RPS Multiplayer</title>
 </head>
 
@@ -60,9 +61,9 @@
 		</div>
 		<!-- /.container-fluid -->
 	</nav>
-	<!-- <div class="container"> -->
-		<div id="mainArea"> <!-- class="row" -->
-			<div class="whtRndBrdr" id="playArea"> <!-- col-lg-12 text-center -->
+	<div class="container">
+		<div class="row" id="mainArea">
+			<div class="col-lg-12 text-center whtRndBrdr" id="playArea">
 				<h1>Rock Paper Scissors... Multiplayer!!!</h1>
 				<main class="mdl-layout__content mdl-color--grey-100">
 					<div class="mdl-grid">
@@ -119,7 +120,7 @@
 				</div>
 			</dialog>
 		</div>
-	<!-- </div> -->
+	</div>
 
 
 	<div id="snackbar" class="mdl-js-snackbar mdl-snackbar">
