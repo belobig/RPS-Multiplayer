@@ -31,7 +31,7 @@ ui.start('#firebaseui-auth-container', uiConfig);
 
 var signOutBtn = '<button class="btn btn-primary" id="signOutBtn" data-toggle="tooltip" data-placement="left" title="Sign Out"><span class="glyphicon glyphicon-log-out"></span></button>';
 
-var playArea = '<div class="col-lg-12 text-center whtRndBrdr" id="playArea"><h1>Rock Paper Scissors... Multiplayer!!!</h1></div>';
+var playArea = $("#playArea");
 
 
 
@@ -59,17 +59,18 @@ initApp = function () {
 				});
 			});
 			$("body").addClass("hotBody");
-			$("#mainArea").html(playArea);
+			playArea.show();
 			console.log("User is Signed IN!");
 			
 		} else {
 			// User is signed out.
+			playArea.hide();
 			document.getElementById('account-details').innerHTML = '';
 			document.getElementById('sign-in').innerHTML = '';
 			$("#firebaseui-auth-container").show();
 			$("body").removeClass("hotBody");
 			$("#mainArea").html('');
-			console.log("User is signed out 004");
+			console.log("User is signed out 005");
 		}
 	}, function (error) {
 		console.log(error);
@@ -80,3 +81,28 @@ window.addEventListener('load', function () {
 	initApp()
 });
 
+
+//game
+ref = firebase.database().ref("/games");
+
+function createGame() {
+	var user = firebase.auth().currentUser;
+	var currentGame = {
+		creator: {uid: user.uid, displayName: user.displayName},
+		state: STATE.OPEN
+	};
+
+	ref.push().set(currentGame);
+}
+
+function joinGame(key) {
+	var user = firebase.auth().currentUser;
+	var gameRef = ref.child(key);
+	gameRef.transaction(function(game) {
+		if (!game.joiner) {
+			game.state = STATE.JOINED;
+			game.joiner = {uid: user.uid, displayName: user.displayName}
+		}
+		return game;
+	});
+}
