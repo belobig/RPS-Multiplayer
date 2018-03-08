@@ -7,11 +7,11 @@
  * */
 
 // Configure Firebase
-firebase.initializeApp(Config.firebase);
+firebase.initializeApp(config);
 
 // Application starts
 window.onload = function() {
-    console.log("version: 0.2");
+    // console.log("version: 0.2");
     UI.fillVertically();
     UI.init();
     Chat.init();
