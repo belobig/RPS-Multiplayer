@@ -240,8 +240,7 @@ var Game = (function () {
 			create.addEventListener("click", createGame);
 
 			gameList = document.querySelector("#games ul");
-			cam = document.querySelector("#cam");
-			dialog = document.querySelector("#game-cam");
+		
 
 			ref = firebase.database().ref("/games");
 
