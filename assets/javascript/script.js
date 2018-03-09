@@ -13,7 +13,8 @@
 window.onload = function() {
     // console.log("version: 0.2");
     UI.fillVertically();
-    UI.init();
+		UI.init();
+		Session.init();
     Chat.init();
     Game.init();
 };
